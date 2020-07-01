@@ -16,7 +16,7 @@ export class DeviceComponent implements OnInit {
       CallerId: "(415) 212-2551",
       Conference: "(212) 672-4124",
       Domain: "sdf.234.sdf.com",
-      ImageUrl: "https://thumbs.dreamstime.com/b/broken-iphone-cracked-screen-los-angeles-ca-usa-december-apple-white-background-selective-focus-68393736.jpg",
+      ImageUrl: "assets/images/phone.png",
     }
    }
 
