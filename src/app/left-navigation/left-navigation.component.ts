@@ -10,7 +10,7 @@ export class LeftNavigationComponent implements OnInit {
   companyLogo: string = "https://lh3.googleusercontent.com/-WPuTTTce_Is/XvyTOOjUOxI/AAAAAAAACoI/fwRIIrOgyeIW67b6kVy5rQ72fs0jfc0RQCK8BGAsYHg/s0/Matchless-IT-large-transparent-background1-300x102-1%25402x.png";
   statusName: Array<any> = ['System', 'Voice', '23 New Messages', 'vFax', 'Call Center'];
   statusColor: Array<any> = ['active', 'warn', 'active', 'danger', 'warn'];
-  menuItems: Array<any> = ['Home', 'Phone', 'Messages', 'Features', 'Activity', 'Support', 'Logout'];
+  menuItems: Array<any> = ['HOME', 'PHONE', 'MESSAGES', 'FEATURES', 'ACTIVITY', 'SUPPORT', 'LOGOUT'];
 
   constructor(private cdref: ChangeDetectorRef) { }
 
