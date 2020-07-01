@@ -1,0 +1,67 @@
+<div class="chart-wrapper">
+    <div class="top-bar">
+        <p><span class="chart-values">{{toRandomWidth()}}</span> Voice</p>
+        <p></p>
+        <p><span class="chart-values">{{toRandomWidth()}}</span> Text</p>
+        <p></p>
+        <p><span class="chart-values">{{toRandomWidth()}}</span> Video</p>
+        <p></p>
+        <p><span class="chart-values">{{toRandomWidth()}}</span> vFax</p>
+        <p></p>
+        <p><span class="chart-values">{{toRandomWidth()}}</span> Chat</p>
+        <p></p>
+    </div>
+
+
+    <div class="chart">
+        <h3>{{title}}</h3>
+
+        <div class="sample-graph">
+            <div class="bar-wrapper">
+                <p class="description">
+                    Inbound Voice
+                </p>
+                <div class="horizontal-bar" [style.width.%]="toRandomWidth()"></div>
+            </div>
+            <div class="bar-wrapper">
+                <p class="description">
+                    Outbound Voice
+                </p>
+                <div class="horizontal-bar" [style.width.%]="toRandomWidth()"></div>
+            </div>
+            <div class="bar-wrapper"></div>
+            <div class="bar-wrapper">
+                <p class="description">
+                    Internal
+                </p>
+                <div class="horizontal-bar" [style.width.%]="toRandomWidth()"></div>
+            </div>
+            <div class="bar-wrapper">
+                <p class="description">
+                    Mobile
+                </p>
+                <div class="horizontal-bar" [style.width.%]="toRandomWidth()"></div>
+            </div>
+            <div class="bar-wrapper">
+                <p class="description">
+                    Voice Conf
+                </p>
+                <div class="horizontal-bar" [style.width.%]="toRandomWidth()"></div>
+            </div>
+
+            <div class="bar-wrapper">
+                <p class="description">
+                    Video Conf
+                </p>
+                <div class="horizontal-bar" [style.width.%]="toRandomWidth()"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+      <p class="yvalues">100</p>
+      <p class="yvalues">150</p>
+      <p class="yvalues">200</p>
+      <p class="yvalues">250</p>
+    </div>
+</div>

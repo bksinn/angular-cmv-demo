@@ -1,0 +1,22 @@
+<div class="person-wrapper">
+    <div class="person-info">
+      <h3 class="person-name">{{person.name}}</h3>
+  
+      <div class="personal">
+        <p class="person-details">{{person.position}}</p> 
+        <p class="person-details">{{person.email}}</p> 
+      </div>
+      <div class="address">
+         <p class="person-details">{{person.address.AddressLine1}}</p> 
+      <p class="person-details">{{person.address.AddressLine2}}</p> 
+      <p class="person-details">{{person.address.AddressLine3}}</p> 
+      </div>
+  
+      <p class="person-details">{{person.TimeZone}}</p> 
+    </div>
+  
+    <div class="person-image">
+      <img class="person" alt="Person Image" src={{person.imageUrl}}/>
+    </div>
+  
+  </div>
