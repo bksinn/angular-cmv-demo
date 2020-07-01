@@ -3,7 +3,7 @@ import { Component, OnInit, ChangeDetectorRef, AfterContentChecked } from '@angu
 @Component({
   selector: 'app-left-navigation',
   templateUrl: './left-navigation.component.html',
-  styleUrls: ['./left-navigation.component.css']
+  styleUrls: ['./left-navigation.component.less']
 })
 export class LeftNavigationComponent implements OnInit {
   companyName: string = "";
