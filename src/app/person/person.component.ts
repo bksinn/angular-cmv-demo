@@ -18,7 +18,8 @@ export class PersonComponent implements OnInit {
         AddressLine2: "Suite 201",
         AddressLine3: "Manaplan, NJ",
         TimeZone: "GMT 0:400 EDT"
-      }
+      },
+      password: "********"
     }
    }
 
