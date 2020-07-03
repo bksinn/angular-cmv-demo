@@ -1,6 +1,32 @@
 <div class="wrapper">
   <div class="navigation">
-    <app-left-navigation></app-left-navigation>
+    <!-- <app-left-navigation></app-left-navigation> -->
+    <div class="left-navigation">
+      <div class="company-details">
+        <h2>
+          <span>
+             <img class="logo" src={{companyLogo}} />
+          </span>
+          {{companyName}}
+        </h2>
+      </div>
+    
+      <div  class="status-wrapper">
+        <div *ngFor="let name of statusName" class="status-info">
+          <span class="status-color" [attr.id]="toRandomStatus()"></span>
+          <p>{{name}}</p>
+        </div>
+      </div>
+    
+      <div class="menu-wrapper">
+        <a *ngFor="let item of menuItems" (click)="randomizeChartAndTitle(item)" class="menu-items">
+          {{item}}
+        </a>
+        <a class="menu-items" href="/">Log Out</a>
+      </div>
+    
+     
+    </div>
   </div>
 
   <div class="main-content">
@@ -16,7 +42,7 @@
 
     <div class="bottom">
       <div class="full">
-        <app-chart></app-chart>
+        <app-chart [chart]="chartData" [title]="chartTitle"></app-chart>
       </div>
     </div>
   </div>
