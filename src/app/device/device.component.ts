@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./device.component.less']
 })
 export class DeviceComponent implements OnInit {
-  device: any;
+  device: {};
   constructor() {
     this.device = {
       Name: "Polycom VVX 250",

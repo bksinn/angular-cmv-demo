@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./person.component.less']
 })
 export class PersonComponent implements OnInit {
-  person: any;
+  person: {};
   constructor() {
     this.person = {
       name: "Mary Higgins",

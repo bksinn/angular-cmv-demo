@@ -6,8 +6,8 @@ import { Component, ChangeDetectorRef } from '@angular/core';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  chartData: any;
-  chartTitle: string = "Active";
+  chartData: {};
+  chartTitle = "Active";
   constructor(private cdref: ChangeDetectorRef) { }
 
   ngOnInit() {
@@ -20,18 +20,19 @@ export class AppComponent {
     }
   }
 
-  companyName: string = "";
-  companyLogo: string = "https://lh3.googleusercontent.com/-WPuTTTce_Is/XvyTOOjUOxI/AAAAAAAACoI/fwRIIrOgyeIW67b6kVy5rQ72fs0jfc0RQCK8BGAsYHg/s0/Matchless-IT-large-transparent-background1-300x102-1%25402x.png";
-  statusName: Array<any> = ['System', 'Voice', '23 New Messages', 'vFax', 'Call Center'];
-  statusColor: Array<any> = ['active', 'warn', 'active', 'danger', 'warn'];
-  menuItems: Array<any> = ['HOME', 'PHONE', 'MESSAGES', 'FEATURES', 'ACTIVITY', 'SUPPORT'];
+  companyName: "";
+  companyLogo: "https://lh3.googleusercontent.com/-WPuTTTce_Is/XvyTOOjUOxI/AAAAAAAACoI/fwRIIrOgyeIW67b6kVy5rQ72fs0jfc0RQCK8BGAsYHg/s0/Matchless-IT-large-transparent-background1-300x102-1%25402x.png";
+  statusName: Array<string> = ['System', 'Voice', '23 New Messages', 'vFax', 'Call Center'];
+  statusColor: Array<string> = ['active', 'warn', 'active', 'danger', 'warn'];
+  menuItems: Array<string> = ['HOME', 'PHONE', 'MESSAGES', 'FEATURES', 'ACTIVITY', 'SUPPORT'];
 
   ngAfterContentChecked() {
     this.cdref.detectChanges();
   }
 
   toRandomStatus() {
-    var randomNum = Math.floor(Math.random() * 10);
+
+    const randomNum = Math.floor(Math.random() * 10);
 
     if (randomNum < 2) {
       return "danger";
@@ -46,7 +47,7 @@ export class AppComponent {
   }
 
   randomizeChartAndTitle(title: string) {
-    title == "HOME" ? this.chartTitle = "Active" : this.chartTitle = title;
+    title === "HOME" ? this.chartTitle = "Active" : this.chartTitle = title;
 
     this.chartData = {
       Voice: Math.floor(Math.random() * 100 / 1.2),

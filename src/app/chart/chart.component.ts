@@ -9,17 +9,14 @@ export class ChartComponent implements OnInit {
   @Input() chart: any;
   @Input() title = "Activity";
 
-  constructor() {
-
-   }
+  constructor() { }
 
   ngOnInit() {
     console.log(this.toRandomWidth())
   }
 
   toRandomWidth() {
-    var randomNum = Math.floor(Math.random() * 100 / 1.2);
-    return randomNum;
+    return Math.floor(Math.random() * 100 / 1.2);
   }
 
 }
