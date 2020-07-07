@@ -22,7 +22,7 @@
         <a *ngFor="let item of menuItems" (click)="randomizeChartAndTitle(item)" class="menu-items">
           {{item}}
         </a>
-        <a class="menu-items" href="/">LOG OUT</a>
+        <a class="menu-items" routerLink="/phones" routerLinkActive="active">LOG OUT</a>
       </div>
 
 
@@ -44,6 +44,9 @@
       <div class="full">
         <app-chart [chart]="chartData" [title]="chartTitle"></app-chart>
       </div>
+    </div>
+    <div class="bottom">
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
