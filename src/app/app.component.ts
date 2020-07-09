@@ -1,4 +1,5 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import { Component, ChangeDetectorRef } from '@angular/core';
 export class AppComponent {
   chartData: {};
   chartTitle = "Active";
-  constructor(private cdref: ChangeDetectorRef) { }
+  constructor(private cdref: ChangeDetectorRef, private router: Router) { }
 
   ngOnInit() {
     this.chartData = {
@@ -47,7 +48,14 @@ export class AppComponent {
   }
 
   randomizeChartAndTitle(title: string) {
+
     title === "HOME" ? this.chartTitle = "Active" : this.chartTitle = title;
+
+    if (title === "HOME") {
+      this.router.navigate(['home']);
+    } else if (title === "PHONE") {
+      this.router.navigate(['phones']);
+    }
 
     this.chartData = {
       Voice: Math.floor(Math.random() * 100 / 1.2),
