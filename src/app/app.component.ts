@@ -51,10 +51,9 @@ export class AppComponent {
 
     title === "HOME" ? this.chartTitle = "Active" : this.chartTitle = title;
 
-    if (title === "HOME") {
-      this.router.navigate(['home']);
-    } else if (title === "PHONE") {
-      this.router.navigate(['phones']);
+    switch (title) {
+      case "HOME": { this.router.navigate(['home']); break; }
+      case "PHONE": { this.router.navigate(['phones']); break; }
     }
 
     this.chartData = {
