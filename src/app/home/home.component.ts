@@ -1,14 +1,15 @@
-import { Component, ChangeDetectorRef } from '@angular/core';
+import { Component, ChangeDetectorRef, OnInit, AfterContentChecked, AfterViewChecked } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.less']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit, AfterContentChecked, AfterViewChecked {
   chartData: {};
   chartTitle = "Active";
-  constructor(private cdref: ChangeDetectorRef) { }
+  constructor(private cdref?: ChangeDetectorRef, private router?: Router) { }
 
   ngOnInit() {
     this.chartData = {
@@ -20,13 +21,16 @@ export class HomeComponent {
     }
   }
 
-  companyName: "";
-  companyLogo: "https://lh3.googleusercontent.com/-WPuTTTce_Is/XvyTOOjUOxI/AAAAAAAACoI/fwRIIrOgyeIW67b6kVy5rQ72fs0jfc0RQCK8BGAsYHg/s0/Matchless-IT-large-transparent-background1-300x102-1%25402x.png";
+  companyName: string = "";
+  companyLogo: string = "https://lh3.googleusercontent.com/-WPuTTTce_Is/XvyTOOjUOxI/AAAAAAAACoI/fwRIIrOgyeIW67b6kVy5rQ72fs0jfc0RQCK8BGAsYHg/s0/Matchless-IT-large-transparent-background1-300x102-1%25402x.png";
   statusName: Array<string> = ['System', 'Voice', '23 New Messages', 'vFax', 'Call Center'];
   statusColor: Array<string> = ['active', 'warn', 'active', 'danger', 'warn'];
   menuItems: Array<string> = ['HOME', 'PHONE', 'MESSAGES', 'FEATURES', 'ACTIVITY', 'SUPPORT'];
 
   ngAfterContentChecked() {
+  }
+
+  ngAfterViewChecked(){
     this.cdref.detectChanges();
   }
 
@@ -47,7 +51,13 @@ export class HomeComponent {
   }
 
   randomizeChartAndTitle(title: string) {
+
     title === "HOME" ? this.chartTitle = "Active" : this.chartTitle = title;
+
+    switch (title) {
+      case "HOME": { this.router.navigate(['home']); break; }
+      case "PHONE": { this.router.navigate(['phones']); break; }
+    }
 
     this.chartData = {
       Voice: Math.floor(Math.random() * 100 / 1.2),
