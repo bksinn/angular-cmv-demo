@@ -10,6 +10,7 @@ import { PhonesComponent } from './phones/phones.component';
 import { HomeComponent} from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { LeftNavComponent } from './left-nav/left-nav.component';
+import { SupportComponent } from './support/support.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { LeftNavComponent } from './left-nav/left-nav.component';
     PhonesComponent,
     HomeComponent,
     LoginComponent,
-    LeftNavComponent
+    LeftNavComponent,
+    SupportComponent
   ],
   imports: [
     BrowserModule,
