@@ -16,10 +16,10 @@
     </div>
 
     <div class="menu-wrapper">
-      <a *ngFor="let item of menuItems" href="" class="menu-items">
+      <a *ngFor="let item of menuItems" [routerLink]="['/home']" class="menu-items">
         {{item}}
       </a>
-      <a class="menu-items">LOG OUT</a>
+      <a class="menu-items" [routerLink]="['/logout']">LOG OUT</a>
     </div>
 
 

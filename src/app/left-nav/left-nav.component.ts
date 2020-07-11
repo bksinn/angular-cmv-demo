@@ -1,6 +1,4 @@
 import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
-import { HomeComponent } from '../home/home.component';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-left-nav',
@@ -13,14 +11,10 @@ export class LeftNavComponent implements OnInit {
   @Input() statusName: Array<string>;
   @Input() statusColor: Array<string>;
   @Input() menuItems: Array<string>;
-  
-  constructor(private cdref?: ChangeDetectorRef, private router?: Router) {
 
-   }
+  constructor() {}
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
   toRandomStatus() {
 

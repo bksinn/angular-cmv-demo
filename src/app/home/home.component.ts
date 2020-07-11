@@ -9,7 +9,13 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit, AfterContentChecked, AfterViewChecked {
   chartData: {};
   chartTitle = "Active";
-  constructor(private cdref?: ChangeDetectorRef, private router?: Router) { }
+  companyName: string = "";
+  companyLogo: string = "https://lh3.googleusercontent.com/-WPuTTTce_Is/XvyTOOjUOxI/AAAAAAAACoI/fwRIIrOgyeIW67b6kVy5rQ72fs0jfc0RQCK8BGAsYHg/s0/Matchless-IT-large-transparent-background1-300x102-1%25402x.png";
+  statusName: Array<string> = ['System', 'Voice', '23 New Messages', 'vFax', 'Call Center'];
+  statusColor: Array<string> = ['active', 'warn', 'active', 'danger', 'warn'];
+  menuItems: Array<string> = ['HOME', 'PHONE', 'MESSAGES', 'FEATURES', 'ACTIVITY', 'SUPPORT'];
+
+  constructor(private cdref: ChangeDetectorRef, private router: Router) { }
 
   ngOnInit() {
     this.chartData = {
@@ -21,11 +27,6 @@ export class HomeComponent implements OnInit, AfterContentChecked, AfterViewChec
     }
   }
 
-  companyName: string = "";
-  companyLogo: string = "https://lh3.googleusercontent.com/-WPuTTTce_Is/XvyTOOjUOxI/AAAAAAAACoI/fwRIIrOgyeIW67b6kVy5rQ72fs0jfc0RQCK8BGAsYHg/s0/Matchless-IT-large-transparent-background1-300x102-1%25402x.png";
-  statusName: Array<string> = ['System', 'Voice', '23 New Messages', 'vFax', 'Call Center'];
-  statusColor: Array<string> = ['active', 'warn', 'active', 'danger', 'warn'];
-  menuItems: Array<string> = ['HOME', 'PHONE', 'MESSAGES', 'FEATURES', 'ACTIVITY', 'SUPPORT'];
 
   ngAfterContentChecked() {
   }
@@ -34,37 +35,4 @@ export class HomeComponent implements OnInit, AfterContentChecked, AfterViewChec
     this.cdref.detectChanges();
   }
 
-  toRandomStatus() {
-
-    const randomNum = Math.floor(Math.random() * 10);
-
-    if (randomNum < 2) {
-      return "danger";
-    }
-    if (randomNum > 5 && randomNum < 8) {
-      return "warn";
-    }
-    else {
-      return "active";
-    }
-
-  }
-
-  randomizeChartAndTitle(title: string) {
-
-    title === "HOME" ? this.chartTitle = "Active" : this.chartTitle = title;
-
-    switch (title) {
-      case "HOME": { this.router.navigate(['home']); break; }
-      case "PHONE": { this.router.navigate(['phones']); break; }
-    }
-
-    this.chartData = {
-      Voice: Math.floor(Math.random() * 100 / 1.2),
-      Text: Math.floor(Math.random() * 100 / 1.2),
-      Video: Math.floor(Math.random() * 100 / 1.2),
-      vFax: Math.floor(Math.random() * 100 / 1.2),
-      Chat: Math.floor(Math.random() * 100 / 1.2)
-    }
-  }
 }
