@@ -1,17 +1,18 @@
-<div style="text-align: center">
+<div class="logo">
   <img src="/assets/images/connectme_logo1.png" class="logo-image">
 </div>
-<div style="display: flex; justify-content: center; align-items: center;flex-direction: column;">
-  <div style="text-align: left">
+
+<div class="login">
+  <div class="username">
     <div class="input-header-text">
       USER NAME
     </div>
-    <div>
-      <input type="text" class="input-username">
-      <span class='warning-text'>Username not found</span>
+    <div class="warning">
+      <input (keyup)="triggerWarning($event)" type="text" class="input-username">
+      <span *ngIf="usernameNotFound" class='warning-text'>Username not found</span>
     </div>
   </div>
-  <div style="text-align: left">
+  <div class="password">
     <div class="input-header-text">
       PASSWORD
     </div>
@@ -20,8 +21,9 @@
     </div>
   </div>
 </div>
+
 <br>
-<div style="display: flex; justify-content: center; align-items: center;">
+<div class="login-buttons">
   <button class="create-username">CREATE USERNAME</button>
   <button class="create-username" (click)="logUserIn()">LOGIN</button>
 </div>

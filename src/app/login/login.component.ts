@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.less']
 })
 export class LoginComponent implements OnInit {
-
+  usernameNotFound: boolean = false;
   constructor(private router: Router) { }
 
   ngOnInit(): void {
@@ -15,6 +15,17 @@ export class LoginComponent implements OnInit {
 
   logUserIn() {
     this.router.navigate(['home']);
+  }
+
+  triggerWarning($event) {
+    let userName = $event.target.value;
+
+    if (userName.length > 3) {
+      this.usernameNotFound = true;
+    }
+    else {
+      this.usernameNotFound = false;
+    }
   }
 
 }
