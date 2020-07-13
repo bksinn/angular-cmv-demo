@@ -16,26 +16,24 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  username: string;
+  password: string;
+
   logUserIn() {
+
+    // let username = document.getElementById('username').textContent;
+
+
+    console.log(this.username);
+    console.log(this.password);
 
     const data = {
       "grant_type": 'password',
-      "username": 'patrick810',
-      //"password": encodeURIComponent('Chrome@198')
-      "password": 'ej2X,xrh_$4}MmM\\'
+      "username": this.username,
+      "Password": this.password
+      //"username": 'patrick810',
+      //"password": 'ej2X,xrh_$4}MmM\\'
     }
-
-    //const data = "grant_type=password&username=chromeapi&password=Chrome@198";
-
-    //let body = new URLSearchParams();
-    //body.set('grant_type', 'password');
-    //body.set('username', 'chromeapi');
-    //body.set('password', 'Chrome@198');
-
-    //const formData: FormData = new FormData();
-    //formData.append('grant_type', 'password');
-    //formData.append('username', 'chromeapi');
-    //formData.append('password', 'Chrome@198');
 
     const headers = new HttpHeaders({
       "Content-Type": "application/x-www-form-urlencoded"
@@ -46,24 +44,22 @@ export class LoginComponent implements OnInit {
     const options = { headers: headers };
 
     this.httpClient
-      .post<any>("https://apidev.mobilevoipconnect.com/Token", body.toString(), options)
-      .subscribe(res => {
-        if (res.access_token) {
-          this.router.navigate(['home']);
-        }
-      });
+      .post<any>("https://apidev.mobilevoipconnect.com/Token", body, options)
+      .subscribe(
 
-  }
+        res => {
 
-  triggerWarning($event) {
-    let userName = $event.target.value;
+          if (res.access_token) {
+            this.router.navigate(['home']);
+          } else {
+            this.usernameNotFound = true;
+          }
 
-    if (userName.length > 3) {
-      this.usernameNotFound = true;
-    }
-    else {
-      this.usernameNotFound = false;
-    }
+        },
+        err => this.usernameNotFound = true
+      )
+
+
   }
 
 }
