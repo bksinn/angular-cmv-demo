@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'app-forgot-password',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForgotPasswordComponent implements OnInit {
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
   ngOnInit(): void {
   }
 
+  username: string;
+
+  getPassword() {
+
+    const accessToken = localStorage.getItem('access_token');
+
+    const headers = new HttpHeaders({
+      "Authorization": "Bearer " + accessToken
+    });
+
+    const options = { headers: headers };
+
+    this.httpClient
+      .get<any>("https://apidev.mobilevoipconnect.com/api/1.0.0/Credentials/ForgotPassword/" + this.username, options)
+      .subscribe(
+        res => console.log(res)
+      );
+  }
 }
