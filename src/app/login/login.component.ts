@@ -50,7 +50,10 @@ export class LoginComponent implements OnInit {
         res => {
 
           if (res.access_token) {
+
+            localStorage.setItem('access_token', res.access_token);
             this.router.navigate(['home']);
+
           } else {
             this.usernameNotFound = true;
           }
