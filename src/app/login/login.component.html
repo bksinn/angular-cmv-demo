@@ -28,6 +28,6 @@
   <button class="create-username" (click)="logUserIn()">LOGIN</button>
 </div>
 <div class="login-buttons">
-  <a href="#" class="hyper-link">Forgot username?</a>
-  <a href="#" class="hyper-link">Forgot password?</a>
+  <a class="hyper-link">Forgot username?</a>
+  <a class="hyper-link" [routerLink]="['/forgot-password']">Forgot password?</a>
 </div>
