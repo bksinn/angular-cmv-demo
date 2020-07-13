@@ -21,6 +21,6 @@ export class DeviceComponent implements OnInit {
    }
 
   ngOnInit() {
-    console.log(this.device);
+
   }
 }
