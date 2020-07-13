@@ -26,13 +26,16 @@ export class ForgotUsernameComponent implements OnInit {
     });
 
     const data = {
-      "emailAddress": this.emailAddress
+      "emailAdddress": this.emailAddress
     }
 
-    const body = new HttpParams({ fromObject: data });
+    //const body = new HttpParams({ fromObject: data });
     const options = { headers: headers };
 
-    console.log(accessToken);
+    //let body = '{emailAddress: ' + this.emailAddress + '}';
+    //const body = new HttpParams({ fromObject: data });
+
+    const body = {"emailAddress" : this.emailAddress};
 
     this.httpClient
       .post<any>("https://apidev.mobilevoipconnect.com/api/1.0.0/Credentials/ForgotUsername", body, options)
