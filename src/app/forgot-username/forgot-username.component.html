@@ -1,0 +1,15 @@
+<div class="logo">
+  <img src="/assets/images/connectme_logo1.png" class="logo-image">
+</div>
+
+<div class="forgotpassword">
+  <div class="input-header-text">
+    Please enter your email address:
+  </div>
+  <input class="input-email" (input)="emailAddress=$event.target.value" type="text" />
+  <button class="get-username" (click)="getUsername()">Get Username</button>
+  <div *ngIf="showMessage">Please check your email for your account information.</div>
+  <div *ngIf="showError">Email not found.</div>
+</div>
+
+

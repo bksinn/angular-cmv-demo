@@ -12,6 +12,7 @@ import { HomeComponent} from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { LeftNavComponent } from './left-nav/left-nav.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ForgotUsernameComponent } from './forgot-username/forgot-username.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     HomeComponent,
     LoginComponent,
     LeftNavComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    ForgotUsernameComponent
   ],
   imports: [
     BrowserModule,
