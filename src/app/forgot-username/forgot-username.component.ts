@@ -29,11 +29,7 @@ export class ForgotUsernameComponent implements OnInit {
       "emailAdddress": this.emailAddress
     }
 
-    //const body = new HttpParams({ fromObject: data });
     const options = { headers: headers };
-
-    //let body = '{emailAddress: ' + this.emailAddress + '}';
-    //const body = new HttpParams({ fromObject: data });
 
     const body = {"emailAddress" : this.emailAddress};
 
