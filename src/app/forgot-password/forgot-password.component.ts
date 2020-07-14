@@ -28,13 +28,16 @@ export class ForgotPasswordComponent implements OnInit {
     const options = { headers: headers };
 
     this.httpClient
-      .get<any>("https://apidev.mobilevoipconnect.com/api/1.0.0/Credentials/ForgotPassword/" + this.username, options)
+      .get<any>("https://apidev.mobilevoipconnect.com/api/1.0.0/Credentials/ForgotPassword/" + this.username)
       .subscribe(
         res => {
           console.log(res);
           this.showMessage = true;
         },
-        error => this.showError = true
+        error => {
+          this.showError = true;
+          console.error(error);
+        }
       );
   }
 }
