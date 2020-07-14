@@ -1,35 +1,39 @@
-<div class="logo">
-  <img src="/assets/images/connectme_logo1.png" class="logo-image">
-</div>
+<div class="login-wrapper">
 
-<div class="login">
-  <div class="username">
-    <div class="input-header-text">
-      USER NAME
+  <div class="logo">
+    <img src="/assets/images/connectme_logo1.png" class="logo-image">
+  </div>
+
+  <div class="login">
+    <div class="username">
+      <div class="input-header-text">
+        USER NAME
+      </div>
+      <div class="warning">
+        <input id="username" (input)="username=$event.target.value" type="text" class="input-username">
+        <span *ngIf="usernameNotFound" class='warning-text'>Invalid Login</span>
+      </div>
     </div>
-    <div class="warning">
-      <input id="username" (input)="username=$event.target.value" type="text" class="input-username">
-      <span *ngIf="usernameNotFound" class='warning-text'>Invalid Login</span>
+    <div class="password">
+      <div class="input-header-text">
+        PASSWORD
+      </div>
+      <div>
+        <input id="password" (input)="password=$event.target.value" type="password" class="input-username">
+      </div>
     </div>
   </div>
-  <div class="password">
-    <div class="input-header-text">
-      PASSWORD
-    </div>
-    <div>
-      <input id="password" (input)="password=$event.target.value" type="password" class="input-username">
-    </div>
+
+  <br>
+
+  <div class="login-buttons">
+    <button class="create-username">CREATE USERNAME</button>
+    <button class="create-username" (click)="logUserIn()">LOGIN</button>
   </div>
-</div>
 
-<br>
+  <div class="login-buttons">
+    <a class="hyper-link" [routerLink]="['/forgot-username']">Forgot username?</a>
+    <a class="hyper-link" [routerLink]="['/forgot-password']">Forgot password?</a>
+  </div>
 
-<div class="login-buttons">
-  <button class="create-username">CREATE USERNAME</button>
-  <button class="create-username" (click)="logUserIn()">LOGIN</button>
-</div>
-
-<div class="login-buttons">
-  <a class="hyper-link" [routerLink]="['/forgot-username']">Forgot username?</a>
-  <a class="hyper-link" [routerLink]="['/forgot-password']">Forgot password?</a>
 </div>
