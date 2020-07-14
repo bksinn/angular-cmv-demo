@@ -26,18 +26,10 @@ export class LoginComponent implements OnInit {
 
   logUserIn() {
 
-    // let username = document.getElementById('username').textContent;
-
-
-    console.log(this.username);
-    console.log(this.password);
-
     const data = {
       "grant_type": 'password',
       "username": this.username,
       "Password": this.password
-      //"username": 'patrick810',
-      //"password": 'ej2X,xrh_$4}MmM\\'
     }
 
     const headers = new HttpHeaders({
@@ -56,7 +48,11 @@ export class LoginComponent implements OnInit {
 
           if (res.access_token) {
 
+            console.log(res);
+
             localStorage.setItem('access_token', res.access_token);
+            localStorage.setItem('expires', res.expires);
+
             this.router.navigate(['home']);
 
           } else {
