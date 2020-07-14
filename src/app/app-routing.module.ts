@@ -14,7 +14,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard]  },
   { path: 'phones', component: PhonesComponent, canActivate: [AuthGuard]  },
   { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [AuthGuard]  },
-  { path: 'forgot-username', component: ForgotUsernameComponent, canActivate: [AuthGuard]  }
+  { path: 'forgot-username', component: ForgotUsernameComponent, canActivate: [AuthGuard] },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
