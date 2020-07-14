@@ -59,7 +59,10 @@ export class LoginComponent implements OnInit {
           }
 
         },
-        err => this.usernameNotFound = true
+        err => {
+          this.usernameNotFound = true;
+          console.error(err);
+        }
       )
 
 
