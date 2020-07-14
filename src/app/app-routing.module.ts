@@ -13,8 +13,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard]  },
   { path: 'phones', component: PhonesComponent, canActivate: [AuthGuard]  },
-  { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [AuthGuard]  },
-  { path: 'forgot-username', component: ForgotUsernameComponent, canActivate: [AuthGuard] },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'forgot-username', component: ForgotUsernameComponent },
   { path: '**', redirectTo: '' }
 ];
 
