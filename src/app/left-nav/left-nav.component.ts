@@ -14,7 +14,11 @@ export class LeftNavComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
+
+  clickLogout() {
+    localStorage.removeItem('access_token');
+  }
 
   toRandomStatus() {
 

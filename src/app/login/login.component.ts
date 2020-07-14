@@ -11,7 +11,12 @@ export class LoginComponent implements OnInit {
 
   usernameNotFound: boolean = false;
 
-  constructor(private router: Router, private httpClient: HttpClient) { }
+  constructor(private router: Router, private httpClient: HttpClient) {
+    if (localStorage.getItem('access_token')) {
+      this.router.navigate(['home']);
+    }
+
+  }
 
   ngOnInit(): void {
   }

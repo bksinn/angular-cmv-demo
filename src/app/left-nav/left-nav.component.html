@@ -19,7 +19,7 @@
       <a *ngFor="let item of menuItems" [routerLink]="['/home']" class="menu-items">
         {{item}}
       </a>
-      <a class="menu-items" [routerLink]="['/logout']">LOG OUT</a>
+      <a class="menu-items" (click)="clickLogout()" [routerLink]="['/logout']">LOG OUT</a>
     </div>
 
 
