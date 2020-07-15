@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 @Component({
@@ -13,7 +13,8 @@ export class ForgotUsernameComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  emailAddress: string;
+  @Input() emailAddress: string;
+
   showMessage: boolean;
   showError: boolean;
 
@@ -28,6 +29,8 @@ export class ForgotUsernameComponent implements OnInit {
     const data = {
       "emailAdddress": this.emailAddress
     }
+
+    console.log(this.emailAddress);
 
     const options = { headers: headers };
 
