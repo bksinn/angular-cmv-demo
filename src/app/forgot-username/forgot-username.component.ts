@@ -20,8 +20,6 @@ export class ForgotUsernameComponent implements OnInit {
 
   getUsername() {
 
-    const accessToken = localStorage.getItem('access_token');
-
     const body = {"emailAddress" : this.emailAddress};
 
     this.httpClient
