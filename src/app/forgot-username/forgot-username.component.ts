@@ -22,18 +22,6 @@ export class ForgotUsernameComponent implements OnInit {
 
     const accessToken = localStorage.getItem('access_token');
 
-    const headers = new HttpHeaders({
-      "Authorization": "Bearer " + accessToken
-    });
-
-    const data = {
-      "emailAdddress": this.emailAddress
-    }
-
-    console.log(this.emailAddress);
-
-    const options = { headers: headers };
-
     const body = {"emailAddress" : this.emailAddress};
 
     this.httpClient
