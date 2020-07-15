@@ -13,7 +13,7 @@ export class ForgotPasswordComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  @Input username: string;
+  @Input() username: string;
   showMessage: boolean;
   showError: boolean;
 
